@@ -1,6 +1,13 @@
+set nocompatible
+set showmatch
+set incsearch
+set acd
+set ar
 set exrc
 set secure
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set ai
+set si
+set sol
