@@ -21,6 +21,10 @@ Bundle 'bling/vim-airline'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'groenewege/vim-less'
 
+Bundle 'airblade/vim-gitgutter'
+Bundle 'Yggdroot/indentLine'
+Bundle 'fatih/vim-go'
+
 filetype plugin indent on
 
 " The rest of your config follows here
@@ -40,6 +44,7 @@ set nu
 highlight LineNr ctermfg=blue
 
 au BufNewFile,BufRead *.less set filetype=less
+au BufNewFile,BufRead *.go set filetype=go
 
 "search highlighting
 set hlsearch
@@ -81,7 +86,7 @@ let g:pymode_doc_key = 'K'
 let g:pymode_lint = 0
 "let g:pymode_lint_checker = 'pyflakes,pep8'
 " Auto check on save
-let g:pymode_lint_write = 1
+let g:pymode_lint_write = 0
 
 " Support virtualenv
 let g:pymode_virtualenv = 1
@@ -95,6 +100,8 @@ let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+let g:pep8_ignore="E501"
 
 " Don't autofold code
 let g:pymode_folding = 0
@@ -137,3 +144,19 @@ nmap <silent> <C-S-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 "nmap <silent> <C-S><PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 "nmap <silent> <C-S><PageDown> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
+" turn off physical line wrapping (ie: automatic insertion of newlines)
+set textwidth=0 wrapmargin=0
+
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType less setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+
+
+" Settings for gitgutter
+highlight clear SignColumn
+
+" Settings for indentLine
+let g:indentLine_color_term = 236
+let g:indentLine_color_gui = '#303030'
