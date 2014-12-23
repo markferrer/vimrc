@@ -160,3 +160,5 @@ highlight clear SignColumn
 " Settings for indentLine
 let g:indentLine_color_term = 236
 let g:indentLine_color_gui = '#303030'
+
+set backspace=indent,eol,start "fix backspace in mac
