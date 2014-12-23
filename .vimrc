@@ -1,30 +1,31 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " The bundles you install will be listed here
 "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'jamis/fuzzy_file_finder'
-Bundle 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'klen/python-mode'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'jamis/fuzzy_file_finder'
+Plugin 'kien/ctrlp.vim'
 "Bundle 'ervandew/supertab'
-Bundle 'bling/vim-airline'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'groenewege/vim-less'
+Plugin 'bling/vim-airline'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'groenewege/vim-less'
 
-Bundle 'airblade/vim-gitgutter'
-Bundle 'Yggdroot/indentLine'
-Bundle 'fatih/vim-go'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Yggdroot/indentLine'
+Plugin 'fatih/vim-go'
 
+call vundle#end()
 filetype plugin indent on
 
 " The rest of your config follows here
@@ -94,6 +95,12 @@ let g:pymode_virtualenv = 1
 " Enable breakpoints plugin
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_key = '<leader>b'
+
+" turn off colorcolumn at max_line_length
+let g:pymode_options_colorcolumn = 0
+let g:pymode_options_max_line_length = 0
+
+syn on
 
 " syntax highlighting
 let g:pymode_syntax = 1
